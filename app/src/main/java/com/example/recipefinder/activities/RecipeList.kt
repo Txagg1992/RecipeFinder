@@ -11,7 +11,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.recipefinder.R
 import com.example.recipefinder.model.Recipe
-import com.example.recipefinder.model.recipeUrl
+import com.example.recipefinder.model.url
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -27,36 +27,29 @@ class RecipeList : AppCompatActivity() {
 
         volleyRequest = Volley.newRequestQueue(this)
 
-        getRecipe(recipeUrl)
-        //getRecipe(url)
+        //getRecipe(recipeUrl)
+        getRecipe(url)
     }
 
     private fun getRecipe(Url: String){
+
+        recipeArray = ArrayList<Recipe>()
+
         val recipeRequest =JsonObjectRequest(Request.Method.GET, Url, null,
             Response.Listener {response: JSONObject ->
                 try {
 
-//                    val jsonArray: JSONArray = response.getJSONArray("hits")
-//                    for (i in 0 until jsonArray.length()) {
-//                        val hit: JSONObject = jsonArray.optJSONObject(i)
-//                        var creatorName: String = hit.getString("user")
-//                        var imageUrl: String = hit.getString("webformatURL")
-//                        var likecount: Int = hit.getInt("likes")
-//                        var imageTags: String = hit.getString("tags")
-//
-//                        //Log.d("Array Entry " + i, jsonArray.toString())
-//                        Log.d("Array Entry $i", creatorName + "\n" + imageTags + "\n" + imageUrl)
-//                    }
-                    val resultArray: JSONArray = response.getJSONArray("results")
+                    val resultArray: JSONArray = response.getJSONArray("hits")
                     for (i in 0 until resultArray.length()){
                         val recipeObj: JSONObject = resultArray.optJSONObject(i)
 
-                        var title: String = recipeObj.getString("title")
-                        var ingredients: String = recipeObj.getString("ingredients")
-                        var thumbnail: String = recipeObj.getString("thumbnail")
-                        var linkUrl: String = recipeObj.getString("href")
+                        var title: String = recipeObj.getString("user")
+                        var ingredients: String = recipeObj.getString("tags")
+                        var thumbnail: String = recipeObj.getString("webformatURL")
+                        var linkUrl: String = recipeObj.getString("pageURL")
 
                         Log.d("<===Result===>", title)
+                        Log.d("<***Tags***>", ingredients)
 
                         var recipe = Recipe()
                         recipe.mTitle = title
@@ -64,7 +57,8 @@ class RecipeList : AppCompatActivity() {
                         recipe.mThumbnail = thumbnail
                         recipe.mLinkAddress = linkUrl
 
-                        recipeArray!!.add(recipe)
+                        //val recipeArray1 = recipeArray
+                        recipeArray?.add(recipe)
                     }
                 }catch (e: JSONException){
                     e.printStackTrace()

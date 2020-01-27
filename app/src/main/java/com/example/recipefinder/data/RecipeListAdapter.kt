@@ -31,7 +31,7 @@ class RecipeListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder?.bindView(list[position])
+        holder.bindView(list[position])
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -47,7 +47,7 @@ class RecipeListAdapter(
             linkButton.setOnClickListener {
 
             }
-            if (TextUtils.isEmpty(recipe.mThumbnail)){
+            if (!TextUtils.isEmpty(recipe.mThumbnail)){
                 Picasso.with(context)
                     .load(recipe.mThumbnail)
                     .placeholder(android.R.drawable.ic_menu_report_image)
