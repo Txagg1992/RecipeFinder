@@ -1,4 +1,4 @@
-package com.example.recipefinder.activities
+package com.curiousapps.recipefinder.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -11,10 +11,10 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.recipefinder.R
-import com.example.recipefinder.data.RecipeListAdapter
-import com.example.recipefinder.model.Recipe
-import com.example.recipefinder.model.url
+import com.curiousapps.recipefinder.R
+import com.curiousapps.recipefinder.data.RecipeListAdapter
+import com.curiousapps.recipefinder.model.Recipe
+import com.curiousapps.recipefinder.model.url
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -61,7 +61,7 @@ class RecipeList : AppCompatActivity() {
 
                         var recipe = Recipe()
                         recipe.mTitle = title
-                        recipe.mIngredients = "Photo Tags: $ingredients"
+                        recipe.mIngredients = "Photo Tags: " + ingredients
                         recipe.mThumbnail = thumbnail
                         recipe.mLinkAddress = linkUrl
 

@@ -1,4 +1,4 @@
-package com.example.recipefinder
+package com.curiousapps.recipefinder
 
 import org.junit.Test
 

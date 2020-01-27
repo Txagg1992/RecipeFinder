@@ -1,4 +1,4 @@
-package com.example.recipefinder.data
+package com.curiousapps.recipefinder.data
 
 import android.content.Context
 import android.text.TextUtils
@@ -9,8 +9,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipefinder.R
-import com.example.recipefinder.model.Recipe
+import com.curiousapps.recipefinder.R
+import com.curiousapps.recipefinder.model.Recipe
 import com.squareup.picasso.Picasso
 
 class RecipeListAdapter(

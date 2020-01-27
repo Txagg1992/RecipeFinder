@@ -1,9 +1,9 @@
-package com.example.recipefinder.activities
+package com.curiousapps.recipefinder.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.recipefinder.R
+import com.curiousapps.recipefinder.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

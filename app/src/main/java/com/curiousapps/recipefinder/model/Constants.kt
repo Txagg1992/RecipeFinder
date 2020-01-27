@@ -1,4 +1,4 @@
-package com.example.recipefinder.model
+package com.curiousapps.recipefinder.model
 
 
 const val recipeUrl = "https://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"

@@ -1,4 +1,4 @@
-package com.example.recipefinder.model
+package com.curiousapps.recipefinder.model
 
 class Recipe() {
 
