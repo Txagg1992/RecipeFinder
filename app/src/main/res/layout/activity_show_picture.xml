@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.curiousapps.recipefinder.activities.ShowPictureActivity">
+    tools:context="com.curiousapps.pixfinder.activities.ShowPictureActivity">
 
     <WebView
         android:id="@+id/webView_id"

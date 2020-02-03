@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.curiousapps.recipefinder">
+    package="com.curiousapps.pixfinder">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.DetailActivity"
+        <activity android:name="com.curiousapps.pixfinder.activities.DetailActivity"
             android:label="@string/pix_detail"/>
-        <activity android:name=".activities.ShowPictureActivity"
+        <activity android:name="com.curiousapps.pixfinder.activities.ShowPictureActivity"
             android:label="@string/pix_url"/>
-        <activity android:name=".activities.RecipeList"
+        <activity android:name="com.curiousapps.pixfinder.activities.RecipeList"
             android:label="@string/search_pix"/>
-        <activity android:name=".activities.MainActivity">
+        <activity android:name="com.curiousapps.pixfinder.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

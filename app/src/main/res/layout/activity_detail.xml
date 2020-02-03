@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="12dp"
-    tools:context="com.curiousapps.recipefinder.activities.DetailActivity">
+    tools:context="com.curiousapps.pixfinder.activities.DetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

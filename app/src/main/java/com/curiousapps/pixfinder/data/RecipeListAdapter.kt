@@ -1,4 +1,4 @@
-package com.curiousapps.recipefinder.data
+package com.curiousapps.pixfinder.data
 
 import android.content.Context
 import android.content.Intent
@@ -10,10 +10,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.curiousapps.recipefinder.R
-import com.curiousapps.recipefinder.activities.DetailActivity
-import com.curiousapps.recipefinder.activities.ShowPictureActivity
-import com.curiousapps.recipefinder.model.Recipe
+import com.curiousapps.pixfinder.R
+import com.curiousapps.pixfinder.activities.DetailActivity
+import com.curiousapps.pixfinder.activities.ShowPictureActivity
+import com.curiousapps.pixfinder.model.Recipe
 import com.squareup.picasso.Picasso
 
 class RecipeListAdapter(

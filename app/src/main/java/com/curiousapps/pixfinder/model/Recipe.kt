@@ -1,4 +1,4 @@
-package com.curiousapps.recipefinder.model
+package com.curiousapps.pixfinder.model
 
 class Recipe() {
 

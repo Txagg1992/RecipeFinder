@@ -1,4 +1,4 @@
-package com.curiousapps.recipefinder.activities
+package com.curiousapps.pixfinder.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -11,12 +11,12 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.curiousapps.recipefinder.R
-import com.curiousapps.recipefinder.data.RecipeListAdapter
-import com.curiousapps.recipefinder.model.LEFT_URL
-import com.curiousapps.recipefinder.model.QUERY
-import com.curiousapps.recipefinder.model.Recipe
-import com.curiousapps.recipefinder.model.urlPix
+import com.curiousapps.pixfinder.R
+import com.curiousapps.pixfinder.data.RecipeListAdapter
+import com.curiousapps.pixfinder.model.LEFT_URL
+import com.curiousapps.pixfinder.model.QUERY
+import com.curiousapps.pixfinder.model.Recipe
+import com.curiousapps.pixfinder.model.urlPix
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONArray
 import org.json.JSONException
