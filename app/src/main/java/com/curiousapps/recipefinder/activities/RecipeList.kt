@@ -33,14 +33,14 @@ class RecipeList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
 
-        var url: String?
-        var extras = intent.extras
-        var mPhotoTags = extras?.get("photoTags")
-        var mPhotoSearch = extras?.get("photoSearch")
+        val url: String?
+        val extras = intent.extras
+        val mPhotoTags = extras?.get("photoTags")
+        val mPhotoSearch = extras?.get("photoSearch")
         if (extras != null && !mPhotoTags?.equals("")!!
-            && !mPhotoSearch?.equals("")!!) {
+                            && !mPhotoSearch?.equals("")!!) {
 
-            var tempUrl = LEFT_URL + mPhotoTags + QUERY + mPhotoSearch
+            val tempUrl = LEFT_URL + mPhotoTags + QUERY + mPhotoSearch
 
             url = tempUrl
         }else {
@@ -67,15 +67,15 @@ class RecipeList : AppCompatActivity() {
                     for (i in 0 until resultArray.length()){
                         val recipeObj: JSONObject = resultArray.optJSONObject(i)
 
-                        var title: String = recipeObj.getString("user")
-                        var ingredients: String = recipeObj.getString("tags")
-                        var thumbnail: String = recipeObj.getString("webformatURL")
-                        var linkUrl: String = recipeObj.getString("pageURL")
+                        val title: String = recipeObj.getString("user")
+                        val ingredients: String = recipeObj.getString("tags")
+                        val thumbnail: String = recipeObj.getString("webformatURL")
+                        val linkUrl: String = recipeObj.getString("pageURL")
 
                         Log.d("<===Result===>", title)
                         Log.d("<***Tags***>", ingredients)
 
-                        var recipe = Recipe()
+                        val recipe = Recipe()
                         recipe.mTitle = "Photographer: \n$title"
                         recipe.mIngredients = "Photo Tags: $ingredients"
                         recipe.mThumbnail = thumbnail

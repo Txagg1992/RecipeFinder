@@ -3,4 +3,5 @@
     <string name="pix_detail">Pix Details</string>
     <string name="pix_url">Pix URL WebView</string>
     <string name="search_pix">Searched Results</string>
+    <string name="searched_picture">Searched Picture</string>
 </resources>

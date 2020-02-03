@@ -11,10 +11,10 @@ class ShowPictureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_picture)
 
-        var extras = intent.extras
+        val extras = intent.extras
 
         if (extras != null){
-            var link = extras.get("link")
+            val link = extras.get("link")
 
             webView_id.loadUrl(link.toString())
         }

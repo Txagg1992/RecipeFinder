@@ -7,10 +7,10 @@ class Recipe() {
     var mThumbnail: String? = null
     var mLinkAddress: String? = null
 
-    constructor(title: String, ingredients: String, thumbnail: String, link:String) : this() {
-        this.mTitle = title
-        this.mIngredients = ingredients
-        this.mThumbnail = thumbnail
-        this.mLinkAddress = link
-    }
+//    constructor(title: String, ingredients: String, thumbnail: String, link:String) : this() {
+//        this.mTitle = title
+//        this.mIngredients = ingredients
+//        this.mThumbnail = thumbnail
+//        this.mLinkAddress = link
+//    }
 }

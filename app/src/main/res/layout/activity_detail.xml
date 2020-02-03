@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="12dp"
     tools:context="com.curiousapps.recipefinder.activities.DetailActivity">
@@ -12,10 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageView
+        <ImageView
             android:id="@+id/image_view_detail"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:contentDescription="@string/searched_picture"
             android:padding="4dp"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Photo Tags:"
             android:textColor="@android:color/white"
-            android:textSize="28dp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

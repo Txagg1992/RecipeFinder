@@ -66,14 +66,14 @@ class RecipeListAdapter(
             }
 
             linkButton.setOnClickListener {
-                var intent = Intent(context, ShowPictureActivity::class.java)
+                val intent = Intent(context, ShowPictureActivity::class.java)
                 intent.putExtra("link", recipe.mLinkAddress.toString())
                 context.startActivity(intent)
             }
 
             thumbnail.setOnClickListener {
-                var dIntent = Intent(context, DetailActivity::class.java)
-                var clickedItem: Recipe = list[adapterPosition]
+                val dIntent = Intent(context, DetailActivity::class.java)
+                val clickedItem: Recipe = list[adapterPosition]
 
                 dIntent.putExtra(EXTRA_URL, clickedItem.mThumbnail)
                 dIntent.putExtra(EXTRA_PHOTOGRAPHER, clickedItem.mTitle)

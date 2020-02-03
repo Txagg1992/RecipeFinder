@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.curiousapps.recipefinder.R
-import com.curiousapps.recipefinder.model.Recipe
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
-    private val recipe: Recipe? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        var detailExtras = intent.extras
+        val detailExtras = intent.extras
         if (detailExtras != null) {
             val imageUrl = detailExtras.getString("thumbnail")
             val photographer = detailExtras.getString("photographer")
