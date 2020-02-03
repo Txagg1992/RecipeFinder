@@ -37,16 +37,18 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/photo_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:hint="Ingredients Search List:" />
+                android:hint="Photo Tags Search:" />
 
             <EditText
+                android:id="@+id/photo_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:hint="Recipe Search Term:" />
+                android:hint="Photo Search Term: Photo, All, Illustration" />
 
             <Button
                 android:id="@+id/search_button"

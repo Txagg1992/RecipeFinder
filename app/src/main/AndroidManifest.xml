@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.curiousapps.recipefinder.activities.RecipeList"></activity>
-        <activity android:name="com.curiousapps.recipefinder.activities.MainActivity">
+        <activity android:name=".activities.DetailActivity"></activity>
+        <activity android:name=".activities.ShowPictureActivity" />
+        <activity android:name=".activities.RecipeList" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

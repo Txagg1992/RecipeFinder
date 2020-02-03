@@ -17,7 +17,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews(){
         search_button.setOnClickListener {
-            startActivity(Intent(this, RecipeList::class.java))
+
+            var intent = Intent(this, RecipeList::class.java)
+
+            var photoTags = photo_tag.text.toString().trim()
+            var photoSearch = photo_search.text.toString().trim()
+
+            intent.putExtra("photoTags", photoTags)
+            intent.putExtra("photoSearch", photoSearch)
+            startActivity(intent)
+            //startActivity(Intent(this, RecipeList::class.java))
         }
     }
 }

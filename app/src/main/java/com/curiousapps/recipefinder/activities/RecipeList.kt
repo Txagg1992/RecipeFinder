@@ -13,8 +13,10 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.curiousapps.recipefinder.R
 import com.curiousapps.recipefinder.data.RecipeListAdapter
+import com.curiousapps.recipefinder.model.LEFT_URL
+import com.curiousapps.recipefinder.model.QUERY
 import com.curiousapps.recipefinder.model.Recipe
-import com.curiousapps.recipefinder.model.url
+import com.curiousapps.recipefinder.model.urlPix
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -30,6 +32,20 @@ class RecipeList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
+
+        var url: String?
+        var extras = intent.extras
+        var mPhotoTags = extras?.get("photoTags")
+        var mPhotoSearch = extras?.get("photoSearch")
+        if (extras != null && !mPhotoTags?.equals("")!!
+            && !mPhotoSearch?.equals("")!!) {
+
+            var tempUrl = LEFT_URL + mPhotoTags + QUERY + mPhotoSearch
+
+            url = tempUrl
+        }else {
+            url = urlPix
+        }
 
         volleyRequest = Volley.newRequestQueue(this)
 
@@ -60,8 +76,8 @@ class RecipeList : AppCompatActivity() {
                         Log.d("<***Tags***>", ingredients)
 
                         var recipe = Recipe()
-                        recipe.mTitle = title
-                        recipe.mIngredients = "Photo Tags: " + ingredients
+                        recipe.mTitle = "Photographer: \n$title"
+                        recipe.mIngredients = "Photo Tags: $ingredients"
                         recipe.mThumbnail = thumbnail
                         recipe.mLinkAddress = linkUrl
 

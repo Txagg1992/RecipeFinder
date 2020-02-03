@@ -1,6 +1,7 @@
 package com.curiousapps.recipefinder.data
 
 import android.content.Context
+import android.content.Intent
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.curiousapps.recipefinder.R
+import com.curiousapps.recipefinder.activities.DetailActivity
+import com.curiousapps.recipefinder.activities.ShowPictureActivity
 import com.curiousapps.recipefinder.model.Recipe
 import com.squareup.picasso.Picasso
 
@@ -17,6 +20,9 @@ class RecipeListAdapter(
     private val list: ArrayList<Recipe>,
     private val context: Context) : RecyclerView.Adapter<RecipeListAdapter.ViewHolder>() {
 
+    private val EXTRA_URL: String = "thumbnail"
+    private val EXTRA_PHOTOGRAPHER: String = "photographer"
+    private val EXTRA_TAGS: String = "tags"
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val view = LayoutInflater.from(context)
@@ -57,6 +63,23 @@ class RecipeListAdapter(
                 Picasso.with(context)
                     .load(R.mipmap.ic_launcher)
                     .into(thumbnail)
+            }
+
+            linkButton.setOnClickListener {
+                var intent = Intent(context, ShowPictureActivity::class.java)
+                intent.putExtra("link", recipe.mLinkAddress.toString())
+                context.startActivity(intent)
+            }
+
+            thumbnail.setOnClickListener {
+                var dIntent = Intent(context, DetailActivity::class.java)
+                var clickedItem: Recipe = list[adapterPosition]
+
+                dIntent.putExtra(EXTRA_URL, clickedItem.mThumbnail)
+                dIntent.putExtra(EXTRA_PHOTOGRAPHER, clickedItem.mTitle)
+                dIntent.putExtra(EXTRA_TAGS, clickedItem.mIngredients)
+
+                context.startActivity(dIntent)
             }
         }
     }
