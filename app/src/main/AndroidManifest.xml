@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.DetailActivity"></activity>
-        <activity android:name=".activities.ShowPictureActivity" />
-        <activity android:name=".activities.RecipeList" />
+        <activity android:name=".activities.DetailActivity"
+            android:label="@string/pix_detail"/>
+        <activity android:name=".activities.ShowPictureActivity"
+            android:label="@string/pix_url"/>
+        <activity android:name=".activities.RecipeList"
+            android:label="@string/search_pix"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
