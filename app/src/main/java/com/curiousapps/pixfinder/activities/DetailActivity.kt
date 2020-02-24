@@ -22,7 +22,7 @@ class DetailActivity : AppCompatActivity() {
             text_view_photo_tags.text = photoTags
 
             if (!TextUtils.isEmpty(imageUrl)) {
-                Picasso.with(this)
+                Picasso.get()
                     .load(imageUrl)
                     .into(image_view_detail)
 
