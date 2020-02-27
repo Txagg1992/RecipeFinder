@@ -7,4 +7,4 @@ const val urlPix ="https://pixabay.com/api/?key=9900098-8e28a903a63da19e7d8c5ab7
 
 const val LEFT_URL = "https://pixabay.com/api/?key=9900098-8e28a903a63da19e7d8c5ab7a&q="
 
-const val QUERY = "&image_type"
+const val QUERY = "&image_type="
