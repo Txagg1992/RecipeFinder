@@ -54,13 +54,13 @@ class RecipeListAdapter(
 
             }
             if (!TextUtils.isEmpty(recipe.mThumbnail)){
-                Picasso.with(context)
+                Picasso.get()
                     .load(recipe.mThumbnail)
                     .placeholder(android.R.drawable.ic_menu_report_image)
                     .error(android.R.drawable.ic_menu_report_image)
                     .into(thumbnail)
             }else{
-                Picasso.with(context)
+                Picasso.get()
                     .load(R.mipmap.ic_launcher)
                     .into(thumbnail)
             }
