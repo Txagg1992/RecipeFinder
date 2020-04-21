@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:layout_margin="12dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/thumbnail"
@@ -41,15 +41,20 @@
             android:textColor="@color/colorPrimary"
             android:layout_below="@+id/recipe_title"/>
 
-        <Button
-            android:id="@+id/link_button"
-            android:layout_width="30dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_link_black"
-            android:layout_margin="8dp"
-            android:layout_below="@id/recipe_ingredients"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
+            android:orientation="horizontal"
+            android:layout_below="@+id/recipe_ingredients">
+            <ImageView
+                android:id="@+id/link_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_link_black"
+                android:layout_margin="8dp"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
 
 
     </RelativeLayout>

@@ -45,7 +45,7 @@ class RecipeListAdapter(
         var title = itemView.findViewById<TextView>(R.id.recipe_title)
         var ingredients = itemView.findViewById<TextView>(R.id.recipe_ingredients)
         var thumbnail = itemView.findViewById<ImageView>(R.id.thumbnail)
-        var linkButton = itemView.findViewById<Button>(R.id.link_button)
+        var linkButton = itemView.findViewById<ImageView>(R.id.link_button)
 
         fun bindView(recipe: Recipe){
             title.text = recipe.mTitle

@@ -33,46 +33,23 @@ class RecipeList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
-        val url: String?
-        val extras = intent.extras
-        val mPhotoTags = extras?.get("photoTags")
-        val mPhotoSearch = extras?.get("photoSearch")
-        if (extras != null && !mPhotoTags?.equals("")!!
-            && !mPhotoSearch?.equals("")!!
-        ) {
 
-            val tempUrl = LEFT_URL + KEY + QUERY + mPhotoTags + IMAGE_TYPE + mPhotoSearch
-
-            url = tempUrl
-        } else {
-            url = urlPix
-        }
+        getExtraValues()
         volleyRequest = Volley.newRequestQueue(this)
 
-        getRecipe(url)
+        getRecipe(urlJet)
         if (!isOnline()) {
             Toast.makeText(
                 this, "This device is not connected to a network", Toast.LENGTH_LONG
             ).show()
         } else {
-            checkCache(url)
+            checkCache(urlJet)
         }
-        checkCache(url)
+        checkCache(urlJet)
     }
 
     private fun checkCache(Url: String) {
-        val extras = intent.extras
-        val mPhotoTags = extras?.get("photoTags")
-        val mPhotoSearch = extras?.get("photoSearch")
-        if (extras != null && !mPhotoTags?.equals("")!!
-            && !mPhotoSearch?.equals("")!!
-        ) {
-            val tempUrl = LEFT_URL + KEY + QUERY + mPhotoTags + IMAGE_TYPE + mPhotoSearch
-
-            urlJet = tempUrl
-        } else {
-            urlJet = urlPix
-        }
+        getExtraValues()
 
         val cache: Cache? = AppController.instance?.requestQueue?.cache
         val imageLoader = AppController.instance?.imageLoader
@@ -91,6 +68,21 @@ class RecipeList : AppCompatActivity() {
 
     }
 
+    private fun getExtraValues(){
+        val extras = intent.extras
+        val mPhotoTags = extras?.get("photoTags")
+        val mPhotoSearch = extras?.get("photoSearch")
+        if (extras != null && !mPhotoTags?.equals("")!!
+            && !mPhotoSearch?.equals("")!!
+        ) {
+            val tempUrl = LEFT_URL + KEY + QUERY + mPhotoTags + IMAGE_TYPE + mPhotoSearch
+
+            urlJet = tempUrl
+        } else {
+            urlJet = urlPix
+        }
+    }
+
     private fun getRecipe(Url: String) {
         recipeArray = ArrayList<Recipe>()
         mRecipeAdapter = RecipeListAdapter(recipeArray!!, this)
@@ -106,8 +98,12 @@ class RecipeList : AppCompatActivity() {
 
                         val title: String = recipeObj.getString("user")
                         val ingredients: String = recipeObj.getString("tags")
-                        val thumbnail: String = recipeObj.getString("webformatURL")
+                        var thumbnail: String = recipeObj.getString("webformatURL")
                         val linkUrl: String = recipeObj.getString("pageURL")
+
+                        if (recipeObj.has("webformatURL")){
+                            thumbnail = recipeObj.getString("webformatURL")
+                        }
 
                         Log.d("<===Result===>", title)
                         Log.d("<***Tags***>", ingredients)

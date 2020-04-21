@@ -1,6 +1,7 @@
 package com.curiousapps.pixfinder.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.curiousapps.pixfinder.R
 import kotlinx.android.synthetic.main.activity_show_picture.*
@@ -18,5 +19,7 @@ class ShowPictureActivity : AppCompatActivity() {
 
             webView_id.loadUrl(link.toString())
         }
+
+        Log.d("%%%URL%%%", extras.toString())
     }
 }
